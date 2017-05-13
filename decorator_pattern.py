@@ -19,3 +19,22 @@ markup_text("Just italic, thank you.", *['i'])
 # Text without markup.
 # <b><i><b>Wrap me around stuff.</b></i></b>
 # <i>Just italic, thank you.</i>
+
+## Take two
+def markup_textt(text):
+    ## prints before anything
+    ##
+    ## print("this is markup_textt's line that will be executed first")
+    def italic():
+        inner_text = text()
+        print ("This is italic function")
+        inner_text =  "%s%s%s" % ('<i>', inner_text, '</i>')
+        return inner_text
+    return italic
+
+@markup_textt ## is the same as text = markup_textt(text)
+def text():
+    print ("this is just a string")
+
+text()
+## TODO FIX ABOVE, ASK QUESTIONS FURTHER
