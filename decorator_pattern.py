@@ -1,3 +1,8 @@
+## Take one, attaching specific functions outside the markup_text,
+## as a instructions (conditions) what of functions you want to be executed
+## at a time.
+
+
 def markup_text(text, *responsibilities):
 
     temp_text = text
@@ -27,14 +32,18 @@ def markup_textt(text):
     ## print("this is markup_textt's line that will be executed first")
     def italic():
         inner_text = text()
-        print ("This is italic function")
         inner_text =  "%s%s%s" % ('<i>', inner_text, '</i>')
         return inner_text
     return italic
 
 @markup_textt ## is the same as text = markup_textt(text)
 def text():
-    print ("this is just a string")
+    return ("this is just a string")
 
-text()
-## TODO FIX ABOVE, ASK QUESTIONS FURTHER
+print(text())
+
+## OUTPUT
+# <i>this is just a string</i>
+
+################################################################################
+## TODO Experiment with wrappers, but above all, keep in mind the data structure
